@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Séance A – Programme Muscu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="index.html">&larr; Accueil</a>
+    <div>
+      <h1 id="seance-titre">Séance A</h1>
+      <span class="soustitre" id="seance-soustitre"></span>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="progress-label" id="progress-label"></div>
+  </div>
+
+  <div class="exo-list" id="exo-list"></div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" id="reset-btn">Décocher toute la séance</button>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>renderSeance("A");</script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+:root {
+  --bg: #0f1115;
+  --card: #1a1d24;
+  --card-border: #2a2e38;
+  --text: #f2f3f5;
+  --text-dim: #9aa0ac;
+  --accent: #ff5a3c;
+  --accent-dim: #4a2018;
+  --done-bg: #17301f;
+  --done-border: #2f6b40;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Header commun ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px 10px 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.topbar a.back {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.topbar a.back:active {
+  background: var(--card);
+}
+
+.topbar h1 {
+  font-size: 20px;
+  margin: 0;
+  flex: 1;
+}
+
+.topbar .soustitre {
+  color: var(--text-dim);
+  font-size: 14px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ---------- Homepage ---------- */
+
+.home-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  justify-content: center;
+}
+
+.home-wrap h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.home-wrap p.subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  margin-bottom: 36px;
+  font-size: 15px;
+}
+
+.seance-btn {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  margin-bottom: 16px;
+  transition: transform 0.1s ease, border-color 0.15s ease;
+}
+
+.seance-btn:active {
+  transform: scale(0.98);
+  border-color: var(--accent);
+}
+
+.seance-btn .letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.seance-btn .label {
+  font-size: 19px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.seance-btn .desc {
+  display: block;
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 8px;
+  margin-left: 48px;
+}
+
+/* ---------- Progress bar ---------- */
+
+.progress-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px 8px 16px;
+}
+
+.progress-track {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--accent);
+  height: 100%;
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+.progress-label {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* ---------- Liste d'exercices ---------- */
+
+.exo-list {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 16px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exo-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.exo-card.done {
+  background: var(--done-bg);
+  border-color: var(--done-border);
+}
+
+.exo-card img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: #000;
+  cursor: zoom-in;
+}
+
+.exo-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.exo-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.exo-nom {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.exo-machine {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 0 0 6px 0;
+}
+
+.exo-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.exo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exo-meta span {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+/* Checkbox */
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--card-border);
+  background: transparent;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.exo-card.done .checkbox {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Reset button ---------- */
+
+.reset-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 16px 0 16px;
+  text-align: center;
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 10px;
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+}
